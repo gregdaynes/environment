@@ -1,0 +1,154 @@
+/******************************************************************************\
+
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+
+/**
+ * CONTENTS............You’re reading it!
+ * EXTENDS.............Extends for the project
+ * MIXINS..............Mixins for the project
+ * VARIABLES...........Set our environment items
+ * IMPORTS.............Set our reset defaults
+ * TYPOGRAPHY..........Set typography
+ * GRIDS...............Set our grids
+ */
+
+
+
+
+
+/*------------------------------------*\
+    $EXTENDS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+
+
+
+
+
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+// Cool
+
+$aqua:  #7FDBFF;
+$blue:  #0074D9;
+$navy:  #001F3F;
+$teal:  #39CCCC;
+$green: #2ECC40;
+$olive: #3D9970;
+$lime:  #01FF70;
+
+// Warm
+
+$yellow:  #FFDC00;
+$orange:  #FF851B;
+$red:     #FF4136;
+$fuchsia: #F012BE;
+$purple:  #B10DC9;
+$maroon:  #85144B;
+
+// Gray Scale
+
+$white:  #fff;
+$silver: #ddd;
+$gray:   #aaa;
+$black:  #111;
+
+// Typography
+
+$typecsset-base-font-size:    16px;
+$typecsset-base-line-height:  32px;
+$typecsset-show-baseline:     true;
+
+$gutter--normal: 24px;
+$gutter--narrow: 12px;
+$gutter--skinny: 6px;
+
+
+/*------------------------------------*\
+    $IMPORTS
+\*------------------------------------*/
+@import "library/typecsset/typecsset";
+@import "library/csswizardry-grids/csswizardry-grids";
+
+
+
+
+
+/*------------------------------------*\
+    $GENERAL
+\*------------------------------------*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 90%;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.1);
+}
+
+blockquote {
+    box-shadow: inset 5px 0 0 black;
+    padding-left: 20px;
+    position: relative;
+    margin-left: 0;
+
+    &:before,
+    &:after {
+        content: '';
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        z-index: -1;
+    }
+
+    &:before {
+        background-color: green;
+        top: 0;
+        left: 0;
+    }
+
+    &:after {
+        background-color: red;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+ul,
+ol {
+    margin-left: $gutter--normal;
+    list-style-position: outside;
+}
+
+table {
+    box-shadow: inset 1px 1px 0 black;
+}
+td,
+th {
+    box-shadow: inset -1px -1px 0 black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    box-shadow: inset  1px  1px 0 black,
+                inset -1px -1px 0 black;
+    padding: 0 $gutter--skinny;
+}
+
+

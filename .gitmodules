@@ -1,0 +1,9 @@
+[submodule "source/assets/sass/library/typecsset"]
+	path = source/assets/sass/library/typecsset
+	url = https://github.com/csswizardry/typecsset.git
+[submodule "source/assets/sass/library/csswizardry-grids"]
+	path = source/assets/sass/library/csswizardry-grids
+	url = https://github.com/csswizardry/csswizardry-grids.git
+[submodule "source/assets/css/library/normalize"]
+	path = source/assets/css/library/normalize
+	url = https://github.com/necolas/normalize.css.git
