@@ -1,0 +1,34 @@
+- i -> insert mode. Type esc to return to normal mode
+- x -> delete the char under the cursor
+- :w -> save
+- :q -> quit
+- :wq -> save and quit
+- dd -> delete and copy the current line
+- p -> paste
+
+- a -> insert after the cursor
+- o -> insert new line after the current one
+- O -> insert new line before the current one
+- cw -> replace from the cursor to end of the word
+
+- 0 -> go to the first column
+- ^ -> go to the first non-blank character of the line
+- $ -> goto end of line
+- g_ -> goto the last non-blank character of line
+- /pattern -> search for pattern
+
+- u -> undo
+- :r -> redo
+
+- :e <path/to/file> -> open
+- :saveas <path/to/file> -> save to <path/to/file>
+- :x, ZZ, :wq -> save and quit (:x only save if necessary)
+- :q! -> quit without saving
+- :qa! -> quit even if there are modified hidden buffers
+- :bn -> show next file buffer
+- :bp -> show previous file buffer
+
+- :set number -> display line numbers
+
+http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/?utm_source=twitterfeed&utm_medium=twitter
+
