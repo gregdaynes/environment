@@ -12,6 +12,8 @@
 
   <link rel="stylesheet" href="assets/css/library/normalize/normalize.css">
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <script src="assets/js/library/picturefill/picturefill.js"></script>
 </head>
 <body>
 <!--[if lt IE 7]>
@@ -19,200 +21,640 @@
 <![endif]-->
 
 
-<nav class="top-nav">
-  <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Events</a></li>
-    <li><a href="#">Contact</a></li>
-    <li><a href="#">Zone Council Login</a></li>
-    <li><a href="#">Board of Directors Login</a></li>
+
+
+
+
+<!--
+  - Menu Collapse Handler
+  -
+  -->
+<input type="checkbox" name="site-nav__handler" id="site-nav__handler" class="site-nav__handler" />
+
+<label for="site-nav__handler" class="site-nav__label" aria-label="Toggle Navigation">
+  <span class="lines">Menu</span>
+</label>
+
+
+
+
+
+
+
+
+<!--
+  - Search Collapse Handler
+  -
+  -->
+<input type="checkbox" name="site-search__handler" id="site-search__handler" class="site-search__handler" />
+
+<label for="site-search__handler" class="site-search__label" aria-label="Toggle Navigation">
+  <span class="icon">Menu</span>
+</label>
+
+
+
+
+
+
+
+
+<!--
+  - Top Nav
+  -
+  - Removed from redundancy
+  - menu items will exist in
+    + footer
+    + quick menu/site-menu
+  -->
+<!--
+<nav class="top-nav  js-small-select">
+  <h1 class="module-header">Top Navigation</h1>
+  <ul class="top-nav__list">
+    <li class="top-nav__item"><a class="top-nav__link" href="#">Home</a></li>
+    <li class="top-nav__item"><a class="top-nav__link" href="#">Blog</a></li>
+    <li class="top-nav__item"><a class="top-nav__link" href="#">Events</a></li>
+    <li class="top-nav__item"><a class="top-nav__link" href="#">Contact</a></li>
+    <li class="top-nav__item"><a class="top-nav__link" href="#">Zone Council Login</a></li>
+    <li class="top-nav__item"><a class="top-nav__link" href="#">Board of Directors Login</a></li>
   </ul>
 </nav>
+-->
 
 
-<header class="site-header">
+
+
+
+
+
+
+
+<header class="l-header">
+<!-- HEADER -->
+
+
+
+
+  <!--
+    - Logo
+    -
+    -->
   <div class="site-logo">
     <h1>British Columbia Golf</h1>
   </div>
 
+
+
+
+
+
+
+  <!--
+    - Search
+    -
+    -->
   <div class="site-search">
-    <form>
-        <input type="text" />
-        <button type="submit">Search</button>
+    <form id="mod-finder-searchform" action="/component/finder/search" method="get" class="site-search__form">
+    	<div class="site-search__container  finder">
+    		<label for="mod-finder-searchword" class="site-search__label  finder">Search</label>
+    		<input type="text" name="q" id="mod-finder-searchword" class="site-search__input  search-query input-medium" size="25" value="" autocomplete="off">
+    		<button class="site-search__button  btn btn-primary hasTooltip  finder" type="submit" title="" data-original-title="Go"><i class="icon-search icon-white"></i></button>
+				<a class="site-search__link" href="/component/finder/search">Advanced Search</a>
+				<input type="hidden" name="Itemid" value="121">
+      </div>
     </form>
-  </div>
+	</div>
+
+
+
+
+
+
+<!-- /Header -->
 </header>
 
-<div class="sub-header">
-  
-  <div class="advertisement  advertisement--leaderboard">
-    <a href="#">
-      <div class="img"></div>
+
+
+
+
+
+
+<div class="l-banner">
+<!-- BANNER -->
+
+
+
+
+  <!--
+    - Advertisement
+    -
+    -->
+  <div class="advertisement  advertisement--responsive">
+    <h1 class="module-header">Advertisement</h1>
+    <a class="advertisement__link" href="#">
+      <span class="advertisement__placeholder"></span>
     </a>
   </div>
 
-  <div class="news-flash">
-    <h1>Latest News</h1>
 
-    <div class="news-flash__wrapper">
-      <article class="news-flash__item">
-        <h1>Title</h1>
-        <p>This is some text for the newsflash item we wiill be mock styling for template development</p>
-        <a href="#">Read More&hellip;</a>
-      </article>
-    </div>
+
+
+
+
+
+  <!--
+    - Latest News
+    -
+    -->
+  <div class="latest-news">
+    <h1 class="module-header">Latest News</h1>
+
+    <nav class="latest-news__nav">
+      <h1 class="section-header">Breaking News Navigation</h3>
+
+      <button class="latest-news__button  latest-news__button--previous">Previous</button>
+      <button class="latest-news__button  latest-news__button--next">Next</button>
+    </nav>
+
+    <ul class="latest-news__list">
+      <li class="latest-news__item">
+        <article class="latest-news__item">
+          <a class="latest-news__link" href="#">
+            <h1 class="latest-news__title">Lorem ipsum dolor sit amet</h1>
+            <p class="latest-news__content">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </a>
+        </article>
+      </li>
+      <li class="latest-news__item">
+        <article class="latest-news__item">
+          <a class="latest-news__link" href="#">
+            <h1 class="latest-news__title">Lorem ipsum dolor sit amet</h1>
+            <p class="latest-news__content">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </a>
+        </article>
+      </li>
+      <li class="latest-news__item">
+        <article class="latest-news__item">
+          <a class="latest-news__link" href="#">
+            <h1 class="latest-news__title">Lorem ipsum dolor sit amet</h1>
+            <p class="latest-news__content">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </a>
+        </article>
+      </li>
+    </ul>
   </div>
 
+
+
+
+<!-- /BANNER -->
 </div>
 
-<div class="main-section">
-  
-  <nav class="quick-menu">
-    <ul>
-      <li><a href="#">Get Started</a></li>
-      <li><a href="#">Join Now</a></li>
-      <li><a href="#">Event Calendar</a></li>
-      <li><a href="#">Championships</a></li>
-      <li><a href="#">Post a score</a></li>
-      <li><a href="#">Zones</a></li>
-      <li><a href="#">Volunteer</a></li>
-      <li><a href="#">Rules &amp; Handicaps</a></li>
-      <li><a href="#">Where to play</a></li>
-      <li><a href="#">Contact Us</a></li>
-    </ul>
-  </nav>   
 
-<div class="carousel">
-  <h1>Featured News</h1>
 
-  <div class="carousel__wrapper">
-    <article class="carousel__item">
-      <h1>Title</h1>
-      <p>Content</p>
-      <a href="#">Read More&hellip;</a>
-    </article>
 
-    <nav class="carousel__nav">
-      <ul> 
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-        <li>6</li>
-        <li>7</li>
-        <li>8</li>
-      </ul>
-    </nav>
-  </div>
 
-  <nav class="site-menu">
-    <ul>
-      <li><a href="#">About Us</a></li>
-      <li><a href="#">Play Golf</a></li>
-      <li><a href="#">Member Benefits</a></li>
-      <li><a href="#">Rules</a></li>
-      <li><a href="#">Learn to Play</a></li>
-      <li><a href="#">Zones</a></li>
-      <li><a href="#">Competitions</a></li>
-      <li><a href="#">Travel Club</a></li>
-      <li><a href="#">News</a></li>
+<div class="l-component-header">
+<!-- COMPONENT-HEADER -->
+
+
+
+
+
+
+  <!--
+    - Quick Nav
+    -
+    -->
+  <nav class="quick-nav">
+    <h1 class="module-header">Quick Navigation</h1>
+    <ul class="quick-nav__list">
+      <li class="quick-nav__item"><a class="quick-nav__link" href="#">Get started</a></li><!--
+   --><li class="quick-nav__item"><a class="quick-nav__link" href="#">Join now</a></li><!--
+   --><li class="quick-nav__item"><a class="quick-nav__link" href="#">Event calendar</a></li><!--
+   --><li class="quick-nav__item"><a class="quick-nav__link" href="#">Championships</a></li><!--
+   --><li class="quick-nav__item"><a class="quick-nav__link" href="#">Post a score</a></li><!--
+   --><li class="quick-nav__item"><a class="quick-nav__link" href="#">Zones</a></li><!--
+   --><li class="quick-nav__item"><a class="quick-nav__link" href="#">Volunteer</a></li><!--
+   --><li class="quick-nav__item"><a class="quick-nav__link" href="#">Rules &amp; Handicaps</a></li><!--
+   --><li class="quick-nav__item"><a class="quick-nav__link" href="#">Where to play</a></li><!--
+   --><li class="quick-nav__item"><a class="quick-nav__link" href="#">Contact us</a></li>
     </ul>
   </nav>
 
+
+
+
+<!-- /COMPONENT-HEADER -->
+</div>
+
+
+
+
+
+
+<div class="l-component">
+<!-- COMPONENT -->
+
+
+
+
+
+  <!--
+    - Feature Carousel
+    -
+    -->
+  <div class="feature-carousel">
+    <h1 class="module-header">Features</h1>
+
+    <input type="radio" name="feature-carousel" id="item1" class="feature-carousel__radio-control  is-hidden" checked />
+    <input type="radio" name="feature-carousel" id="item2" class="feature-carousel__radio-control  is-hidden" />
+    <input type="radio" name="feature-carousel" id="item3" class="feature-carousel__radio-control  is-hidden" />
+    <input type="radio" name="feature-carousel" id="item4" class="feature-carousel__radio-control  is-hidden" />
+    <input type="radio" name="feature-carousel" id="item5" class="feature-carousel__radio-control  is-hidden" />
+
+    <div class="feature-carousel__viewport">
+      <div class="feature-carousel__container">
+
+        <article class="feature-carousel__item">
+          <figure>
+            <div class="feature-carousel__img-wrapper">
+
+              <span class="feature-carousel__img" data-picture data-alt="Alt Text">
+                <span data-src="http://placehold.it/320x180"></span>
+                <span data-src="http://placehold.it/569x320" data-media="(min-width: 480px)"></span>
+                <span data-src="http://placehold.it/853x480" data-media="(min-width: 768px)"></span>
+
+                <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                <noscript>
+                    <img src="http://placehold.it/320x320" alt="Alt Text">
+                </noscript>
+              </span>
+            </div><!--
+         --><figcaption class="feature-carousel__caption">
+              <h1 class="feature-carousel__title">Id shop steamed, frappuccino</h1>
+              <p class="feature-carousel__text">Black id extraction shop acerbic spoon percolator strong ristretto. In, barista whipped foam irish, fair trade blue mountain so a half and half grounds fair trade. Café au lait caffeine half and half carajillo, cappuccino sweet, extraction beans mocha cup affogato. Grinder aftertaste, acerbic mazagran carajillo crema aroma.</p>
+              <a class="feature-carousel__link" href="#">Read More&hellip;</a>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="feature-carousel__item">
+          <figure>
+            <div class="feature-carousel__img-wrapper">
+
+              <span class="feature-carousel__img" data-picture data-alt="Alt Text">
+                <span data-src="http://placehold.it/320x180"></span>
+                <span data-src="http://placehold.it/569x320" data-media="(min-width: 480px)"></span>
+                <span data-src="http://placehold.it/853x480" data-media="(min-width: 768px)"></span>
+
+                <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                <noscript>
+                    <img src="http://placehold.it/320x320" alt="Alt Text">
+                </noscript>
+              </span>
+            </div><!--
+         --><figcaption class="feature-carousel__caption">
+              <h1 class="feature-carousel__title">Id shop steamed, frappuccino</h1>
+              <p class="feature-carousel__text">Black id extraction shop acerbic spoon percolator strong ristretto. In, barista whipped foam irish, fair trade blue mountain so a half and half grounds fair trade. Café au lait caffeine half and half carajillo, cappuccino sweet, extraction beans mocha cup affogato. Grinder aftertaste, acerbic mazagran carajillo crema aroma.</p>
+              <a class="feature-carousel__link" href="#">Read More&hellip;</a>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="feature-carousel__item">
+          <figure>
+            <div class="feature-carousel__img-wrapper">
+
+              <span class="feature-carousel__img" data-picture data-alt="Alt Text">
+                <span data-src="http://placehold.it/320x180"></span>
+                <span data-src="http://placehold.it/569x320" data-media="(min-width: 480px)"></span>
+                <span data-src="http://placehold.it/853x480" data-media="(min-width: 768px)"></span>
+
+                <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                <noscript>
+                    <img src="http://placehold.it/320x320" alt="Alt Text">
+                </noscript>
+              </span>
+            </div><!--
+         --><figcaption class="feature-carousel__caption">
+              <h1 class="feature-carousel__title">Id shop steamed, frappuccino</h1>
+              <p class="feature-carousel__text">Black id extraction shop acerbic spoon percolator strong ristretto. In, barista whipped foam irish, fair trade blue mountain so a half and half grounds fair trade. Café au lait caffeine half and half carajillo, cappuccino sweet, extraction beans mocha cup affogato. Grinder aftertaste, acerbic mazagran carajillo crema aroma.</p>
+              <a class="feature-carousel__link" href="#">Read More&hellip;</a>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="feature-carousel__item">
+          <figure>
+            <div class="feature-carousel__img-wrapper">
+
+              <span class="feature-carousel__img" data-picture data-alt="Alt Text">
+                <span data-src="http://placehold.it/320x180"></span>
+                <span data-src="http://placehold.it/569x320" data-media="(min-width: 480px)"></span>
+                <span data-src="http://placehold.it/853x480" data-media="(min-width: 768px)"></span>
+
+                <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                <noscript>
+                    <img src="http://placehold.it/320x320" alt="Alt Text">
+                </noscript>
+              </span>
+            </div><!--
+         --><figcaption class="feature-carousel__caption">
+              <h1 class="feature-carousel__title">Id shop steamed, frappuccino</h1>
+              <p class="feature-carousel__text">Black id extraction shop acerbic spoon percolator strong ristretto. In, barista whipped foam irish, fair trade blue mountain so a half and half grounds fair trade. Café au lait caffeine half and half carajillo, cappuccino sweet, extraction beans mocha cup affogato. Grinder aftertaste, acerbic mazagran carajillo crema aroma.</p>
+              <a class="feature-carousel__link" href="#">Read More&hellip;</a>
+            </figcaption>
+          </figure>
+        </article>
+
+        <article class="feature-carousel__item">
+          <figure>
+            <div class="feature-carousel__img-wrapper">
+
+              <span class="feature-carousel__img" data-picture data-alt="Alt Text">
+                <span data-src="http://placehold.it/320x180"></span>
+                <span data-src="http://placehold.it/569x320" data-media="(min-width: 480px)"></span>
+                <span data-src="http://placehold.it/853x480" data-media="(min-width: 768px)"></span>
+
+                <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+                <noscript>
+                    <img src="http://placehold.it/320x320" alt="Alt Text">
+                </noscript>
+              </span>
+            </div><!--
+         --><figcaption class="feature-carousel__caption">
+              <h1 class="feature-carousel__title">Id shop steamed, frappuccino</h1>
+              <p class="feature-carousel__text">Black id extraction shop acerbic spoon percolator strong ristretto. In, barista whipped foam irish, fair trade blue mountain so a half and half grounds fair trade. Café au lait caffeine half and half carajillo, cappuccino sweet, extraction beans mocha cup affogato. Grinder aftertaste, acerbic mazagran carajillo crema aroma.</p>
+              <a class="feature-carousel__link" href="#">Read More&hellip;</a>
+            </figcaption>
+          </figure>
+        </article>
+
+      </div>
+    </div>
+
+    <nav class="feature-carousel__nav  nav">
+
+      <h3 class="section-header">Featured Article Navigation</h3>
+      <label for="item1" class="feature-carousel__nav-item  button">1</label>
+      <label for="item2" class="feature-carousel__nav-item  button">2</label>
+      <label for="item3" class="feature-carousel__nav-item  button">3</label>
+      <label for="item4" class="feature-carousel__nav-item  button">4</label>
+      <label for="item5" class="feature-carousel__nav-item  button">5</label>
+
+      <button class="feature-carousel__nav-previous  button  js-carousel-button-previous">Previous Slide</button>
+      <button class="feature-carousel__nav-next      button  js-carousel-button-next">Next Slide</button>
+    </nav>
+  </div>
+
+
+
+
+
+
+
+
+
+  <!-- Site Navigation -->
+  <nav class="site-nav">
+    <h1 class="module-header">Site Navigation</h1>
+    <ul class="site-nav__list  site-nav__list">
+      <li class="site-nav__item  site-nav__item  deeper  parent">
+        <a class="site-nav__link" href="/about">About Us</a>
+
+        <ul class="site-nav__list  nav-child unstyled small">
+          <li class="site-nav__item  item-189"><a class="site-nav__link" href="/about/board">Board &amp; Staff</a></li>
+
+          <li class="site-nav__item  item-192"><a class="site-nav__link" href="/about/mission">Mission</a></li>
+
+          <li class="site-nav__item  item-193"><a class="site-nav__link" href="/about/policies">Bylaws &amp; Policies</a></li>
+
+          <li class="site-nav__item  item-190"><a class="site-nav__link" href="/about/partners">Partners</a></li>
+
+          <li class="site-nav__item  item-194"><a class="site-nav__link" href="/about/board-log-in">Board Log In</a></li>
+
+          <li class="site-nav__item  item-195"><a class="site-nav__link" href="/about/media">Media Centre</a></li>
+
+          <li class="site-nav__item  item-196"><a class="site-nav__link" href="/about/jobs">Job Opportunities</a></li>
+        </ul>
+      </li>
+
+      <li class="site-nav__item  item-198 deeper parent">
+        <a class="site-nav__link" href="/play-golf">Play Golf</a>
+
+        <ul class="site-nav__list  nav-child unstyled small">
+          <li class="site-nav__item  item-199"><a class="site-nav__link" href="/play-golf/get-started">Get Started</a></li>
+
+          <li class="site-nav__item  item-200"><a class="site-nav__link" href="/play-golf/public-player-program">Public Player Program</a></li>
+
+          <li class="site-nav__item  item-201"><a class="site-nav__link" href="/play-golf/courses-clubs">Courses &amp; Clubs</a></li>
+
+          <li class="site-nav__item  item-202"><a class="site-nav__link" href="/play-golf/volunteer">Volunteer</a></li>
+
+          <li class="site-nav__item  item-203"><a class="site-nav__link" href="https://book.golfswitch.com/Portal/?custid=BRT&amp;part=&amp;lang=en&amp;country=CA&amp;state=BC" target="_blank">Book a Tee Time</a></li>
+        </ul>
+      </li>
+
+      <li class="site-nav__item  item-204 deeper parent">
+        <a class="site-nav__link" href="/member-benefits">Member Benefits</a>
+
+        <ul class="site-nav__list  nav-child unstyled small">
+          <li class="site-nav__item  item-205"><a class="site-nav__link" href="/member-benefits/individual-membership">Individual Membership</a></li>
+
+          <li class="site-nav__item  item-206"><a class="site-nav__link" href="/member-benefits/club-memberships">Club Memberships</a></li>
+
+          <li class="site-nav__item  item-207"><a class="site-nav__link" href="/member-benefits/course-ratings-handicaps">Course Ratings &amp; Handicaps</a></li>
+
+          <li class="site-nav__item  item-208"><a class="site-nav__link" href="/member-benefits">Member Deals</a></li>
+        </ul>
+      </li>
+
+      <li class="site-nav__item  item-210 deeper parent">
+        <a class="site-nav__link" href="/rules">Rules</a>
+
+        <ul class="site-nav__list  nav-child unstyled small">
+          <li class="site-nav__item  item-209"><a class="site-nav__link" href="/rules/publications">Publications</a></li>
+
+          <li class="site-nav__item  item-211"><a class="site-nav__link" href="/rules/workshops">Workshops</a></li>
+
+          <li class="site-nav__item  item-212"><a class="site-nav__link" href="/rules/updates">Updates</a></li>
+
+          <li class="site-nav__item  item-213"><a class="site-nav__link" href="/rules/faq">FAQ</a></li>
+        </ul>
+      </li>
+
+      <li class="site-nav__item  item-215 deeper parent">
+        <a class="site-nav__link" href="/2014-01-06-19-10-48/junior-golf">Junior Golf</a>
+
+        <ul class="site-nav__list  nav-child unstyled small">
+          <li class="site-nav__item  item-214"><a class="site-nav__link" href="/2014-01-06-19-10-48/junior-golf">Junior Golf</a></li>
+
+          <li class="site-nav__item  item-216"><a class="site-nav__link" href="/2014-01-06-19-10-48/school-golf-programs">School Golf Programs</a></li>
+
+          <li class="site-nav__item  item-217"><a class="site-nav__link" href="/2014-01-06-19-10-48/team-bc">Team BC</a></li>
+
+          <li class="site-nav__item  item-218"><a class="site-nav__link" href="/2014-01-06-19-10-48/player-development">Player Development</a></li>
+
+          <li class="site-nav__item  item-219"><a class="site-nav__link" href="/2014-01-06-19-10-48/coaching">Coaching</a></li>
+
+          <li class="site-nav__item  item-220"><a class="site-nav__link" href="/2014-01-06-19-10-48/player-development-trust-fund">Player Development Trust Fund</a></li>
+
+          <li class="site-nav__item  item-221"><a class="site-nav__link" href="/2014-01-06-19-10-48/financial-assistance">Financial Assistance</a></li>
+        </ul>
+      </li>
+
+      <li class="site-nav__item  item-223 deeper parent">
+        <a class="site-nav__link" href="/2014-01-06-21-34-15/zones">Zones</a>
+
+        <ul class="site-nav__list  nav-child unstyled small">
+          <li class="site-nav__item  item-222"><a class="site-nav__link" href="/2014-01-06-21-34-15/zones">Zones</a></li>
+
+          <li class="site-nav__item  item-224"><a class="site-nav__link" href="/2014-01-06-21-34-15/zone-resources">Zone Resources</a></li>
+
+          <li class="site-nav__item  item-225"><a class="site-nav__link" href="/2014-01-06-21-34-15/zone-events-calendar">Zone Events Calendar</a></li>
+
+          <li class="site-nav__item  item-226"><a class="site-nav__link" href="/2014-01-06-21-34-15/zone-council-login">Zone Council Login</a></li>
+
+          <li class="site-nav__item  item-227"><a class="site-nav__link" href="/2014-01-06-21-34-15/volunteer-resources">Volunteer Resources</a></li>
+
+          <li class="site-nav__item  item-228"><a class="site-nav__link" href="/2014-01-06-21-34-15/volunteer-recognition">Volunteer Recognition</a></li>
+        </ul>
+      </li>
+
+      <li class="site-nav__item  item-229 deeper parent">
+        <a class="site-nav__link" href="/competitions">Competitions</a>
+
+        <ul class="site-nav__list  nav-child unstyled small">
+          <li class="site-nav__item  item-230"><a class="site-nav__link" href="/competitions/championship-schedule">Championship Schedule</a></li>
+
+          <li class="site-nav__item  item-231"><a class="site-nav__link" href="/competitions/past-champions">Past Champions</a></li>
+
+          <li class="site-nav__item  item-232"><a class="site-nav__link" href="/competitions/conduct-policies">Conduct &amp; Policies</a></li>
+
+          <li class="site-nav__item  item-233"><a class="site-nav__link" href="/competitions/orders-of-merit">Orders of Merit</a></li>
+
+          <li class="site-nav__item  item-234"><a class="site-nav__link" href="/competitions/pnga-events">PNGA Events</a></li>
+
+          <li class="site-nav__item  item-235"><a class="site-nav__link" href="/competitions/national-championships">National Championships</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Article Grid -->
   <div class="article-grid">
-    <ul>
-      <li>
-        <article>
-          <h1>Title</h1>
-          <p>Text</p>
-          <a href="#">Read More&hellip;</a>
-        </article>
-      </li>  
-      <li>
-        <article>
-          <h1>Title</h1>
-          <p>Text</p>
-          <a href="#">Read More&hellip;</a>
-        </article>
-      </li>  
-      <li>
-        <article>
-          <h1>Title</h1>
-          <p>Text</p>
-          <a href="#">Read More&hellip;</a>
-        </article>
-      </li>  
-      <li>
-        <article>
-          <h1>Title</h1>
-          <p>Text</p>
-          <a href="#">Read More&hellip;</a>
-        </article>
-      </li>  
-      <li>
-        <article>
-          <h1>Title</h1>
-          <p>Text</p>
-          <a href="#">Read More&hellip;</a>
-        </article>
-      </li>  
-      <li>
-        <article>
-          <h1>Title</h1>
-          <p>Text</p>
-          <a href="#">Read More&hellip;</a>
-        </article>
-      </li>  
-      <li>
-        <article>
-          <h1>Title</h1>
-          <p>Text</p>
-          <a href="#">Read More&hellip;</a>
-        </article>
-      </li>  
-      <li>
-        <article>
-          <h1>Title</h1>
-          <p>Text</p>
-          <a href="#">Read More&hellip;</a>
-        </article>
-      </li>  
+    <h1 class="module--header">Article Grid</h1>
+    <ul class="article-grid__list">
+      <li class="article-grid__item">
+        <div class="article-grid__article">
+          <img class="article__img" src="//placehold.it/320/320" alt="">
+          <h1 class="article__title">Article title and stuff</h1>
+          <p class="article__text">Text text test</p>
+          <a class="article__readmore" href="#">Read more</a>
+        </div>
+      </li>
+      <li class="article-grid__item">
+        <div class="article-grid__article">
+          <img class="article__img" src="//placehold.it/320/320" alt="">
+          <h1 class="article__title">Article title and stuff</h1>
+          <p class="article__text">Text text test</p>
+          <a class="article__readmore" href="#">Read more</a>
+        </div>
+      </li>
+      <li class="article-grid__item">
+        <div class="article-grid__article">
+          <img class="article__img" src="//placehold.it/320/320" alt="">
+          <h1 class="article__title">Article title and stuff</h1>
+          <p class="article__text">Text text test</p>
+          <a class="article__readmore" href="#">Read more</a>
+        </div>
+      </li>
+      <li class="article-grid__item">
+        <div class="article-grid__article">
+          <img class="article__img" src="//placehold.it/320/320" alt="">
+          <h1 class="article__title">Article title and stuff</h1>
+          <p class="article__text">Text text test</p>
+          <a class="article__readmore" href="#">Read more</a>
+        </div>
+      </li>
+      <li class="article-grid__item">
+        <div class="article-grid__article">
+          <img class="article__img" src="//placehold.it/320/320" alt="">
+          <h1 class="article__title">Article title and stuff</h1>
+          <p class="article__text">Text text test</p>
+          <a class="article__readmore" href="#">Read more</a>
+        </div>
+      </li>
+      <li class="article-grid__item">
+        <div class="article-grid__article">
+          <img class="article__img" src="//placehold.it/320/320" alt="">
+          <h1 class="article__title">Article title and stuff</h1>
+          <p class="article__text">Text text test</p>
+          <a class="article__readmore" href="#">Read more</a>
+        </div>
+      </li>
+      <li class="article-grid__item">
+        <div class="article-grid__article">
+          <img class="article__img" src="//placehold.it/320/320" alt="">
+          <h1 class="article__title">Article title and stuff</h1>
+          <p class="article__text">Text text test</p>
+          <a class="article__readmore" href="#">Read more</a>
+        </div>
+      </li>
+      <li class="article-grid__item">
+        <div class="article-grid__article">
+          <img class="article__img" src="//placehold.it/320/320" alt="">
+          <h1 class="article__title">Article title and stuff</h1>
+          <p class="article__text">Text text test</p>
+          <a class="article__readmore" href="#">Read more</a>
+        </div>
+      </li>
     </ul>
   </div>
 
-  <div class="advertisement  advertisement--responsive">
+
+
+<!-- /COMPONENT -->
+</div>
+
+
+<!-- TEMPLATE: POSITION: CONTENT FOOTER -->
+<div class="l-component-footer">
+
+  <!-- Advertisement -->
+  <div class="advertisement advertisement--responsive">
     <a href="#">
-      <div class="img></div>
+      <img src="//placehold.it/728x90" />
     </a>
   </div>
 
-  <div class="bottom-modules">
-    <div class="youtube-module">
+  <div class="featured-video">
+    <h1 class="module-header">Featured Video</h1>
+    <img src="//placehold.it/640x480" />
+  <div>
 
-    </div>
-
-    <div class="module-leaderboard">
-
-    </div>
+  <div class="leaderboard">
+    <h1 class="module-header">Championship Leaderboard</h1>
   </div>
 
-  <div class="sponsor-carousel">
-    
+  <div class="sponsors">
+    <h1 class="module-header">Sponsors</h1>
   </div>
 
 </div>
 
-<div class="aside">
+<!-- TEMPLATE: POSITION: SIDEBAR -->
+<div class="l-sidebar">
 
 </div>
 
-<footer class="site-footer">
+<!-- TEMPLATE: POSITION: FOOTER -->
+<footer class="l-footer">
 
 </footer>
 
+<!-- TEMPLATE: POSITION: COPYRIGHT -->
+<div class="l-copyright">
 
-</body>
-</html>
-
+</div>

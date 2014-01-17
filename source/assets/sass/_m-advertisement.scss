@@ -1,0 +1,44 @@
+.advertisement {
+
+}
+
+.advertisement .module-header {
+  @extend %hide;
+}
+
+.advertisement a {
+
+}
+
+.advertisement__placeholder {
+  background-image: url(//placehold.it/300x50);
+  background-position: left top;
+  background-repeat: no-repeat;
+
+  width: 300px;
+  height: 50px;
+
+  display: block;
+
+  margin: $gutter--narrow auto;
+}
+
+
+
+
+
+.advertisement--responsive {
+
+}
+
+.advertisement--responsive .module-header {
+
+}
+
+.advertisement--responsive .advertisement__link {
+
+}
+
+.advertisement--responsive .advertisement__placeholder {
+
+}

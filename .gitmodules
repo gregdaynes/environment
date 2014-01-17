@@ -7,3 +7,6 @@
 [submodule "source/assets/css/library/normalize"]
 	path = source/assets/css/library/normalize
 	url = https://github.com/necolas/normalize.css.git
+[submodule "source/assets/js/library/picturefill"]
+	path = source/assets/js/library/picturefill
+	url = https://github.com/scottjehl/picturefill.git

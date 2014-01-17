@@ -12,7 +12,107 @@
  * IMPORTS.............Set our reset defaults
  * TYPOGRAPHY..........Set typography
  * GRIDS...............Set our grids
+ * LAYOUT..............
+ * MODULES.............
  */
+
+/*------------------------------------*\
+    $FUNCTIONS
+\*------------------------------------*/
+@function em($px){
+  @return ($px/16px)+0em;
+}
+
+/*------------------------------------*\
+    $VARIABLES
+\*------------------------------------*/
+
+$use-silent-classes:    true;
+
+
+// Breakpoints
+
+$breakpoints: (
+    'palm' '(max-width: 480px)',
+    'lap' '(min-width: 481px) and (max-width: 1023px)',
+    'portable' '(max-width: 1023px)',
+    'desk' '(min-width: 1024px)'
+);
+
+$breakpoint-has-widths: ('palm', 'lap', 'portable', 'desk');
+$breakpoint-has-push:   ('palm', 'lap', 'portable', 'desk');
+$breakpoint-has-pull:   ('palm', 'lap', 'portable', 'desk');
+
+
+// Cool
+
+$color--aqua:  #7FDBFF;
+$color--blue:  #0054a4;
+$color--navy:  #001F3F;
+$color--teal:  #39CCCC;
+$color--green: #5d9632;
+$color--olive: #3D9970;
+$color--lime:  #01FF70;
+
+// Warm
+
+$color--yellow:  #FFDC00;
+$color--orange:  #FF851B;
+$color--red:     #FF4136;
+$color--fuchsia: #F012BE;
+$color--purple:  #B10DC9;
+$color--maroon:  #85144B;
+
+// Gray Scale
+
+$color--black:        #111;
+$color--gray-darker:  #222;
+$color--gray-dark:    #333;
+$color--gray:          #555;
+$color--gray-light:   #999;
+$color--gray-lighter: #eee;
+$color--white:        #fff;
+
+// quick var
+$black: $color--black;
+$white: $color--white;
+
+
+
+// Size
+$size--small: 12px;
+$size--base:  16px;
+$size--touch-target: 44px;
+$size--menu-width: 90%;
+
+$small:       em( 320px); // 320px
+$medium:      em( 468px); // 468px
+$large:       em( 768px); // 768px;
+$extra-large: em(1024px); // 1004px;
+$massive:     em(1440px); // 1440px;
+
+// Gutter
+
+$gutter--normal: 20px;
+$gutter--narrow: 10px;
+$gutter--skinny: 5px;
+
+
+// Typography
+
+$typecsset-base-font-size:    $size--base;
+$typecsset-base-line-height:  32px;
+$typecsset-show-baseline:     false;
+
+
+
+$animation--transition-speed: 0.3s;
+
+
+$z-index--menu: 999;
+$z-index--search: 998;
+$z-index--absolute: 1000;
+
 
 
 
@@ -21,58 +121,92 @@
 /*------------------------------------*\
     $EXTENDS
 \*------------------------------------*/
+%ir {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
+%hide {
+  @extend %ir;
+  @extend %zero;
 
+  height: 0;
+}
 
+%zero {
+  margin: 0;
+  padding: 0;
+}
+
+%list {
+  @extend %zero;
+  list-style: none;
+}
+
+%clearfix {
+  zoom:1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+%outline {
+  box-shadow: inset -1px -1px 0 $black,
+              inset 1px 1px 0 $black;
+}
 
 
 /*------------------------------------*\
     $MIXINS
 \*------------------------------------*/
+@mixin bp($unit-one, $query-one: min-width, $unit-two: "", $query-two: max-width, $target: "") {
+
+
+  // 2 units
+  @if $unit-two != "" {
+
+    // target
+    @if $target != "" {
+      @media #{$target} and (#{$query-one}: #{$unit-one}) and (#{$query-two}: #{unit-two}) {
+        @content;
+      }
+    }
+
+    // no target
+    @else {
+      @media (#{$query-one}: #{$unit-one}) and (#{$query-two}: #{$unit-two}) {
+        @content;
+      }
+    }
+  }
+
+  @else {
+    // target
+    @if $target != "" {
+      @media #{$target} and (#{$query-one}: #{$unit-one}) {
+        @content;
+      }
+    }
+
+    // no target
+    @else {
+      @media (#{$query-one}: #{$unit-one}) {
+        @content;
+      }
+    }
+  }
+}
 
 
 
 
-
-/*------------------------------------*\
-    $VARIABLES
-\*------------------------------------*/
-
-// Cool
-
-$aqua:  #7FDBFF;
-$blue:  #0074D9;
-$navy:  #001F3F;
-$teal:  #39CCCC;
-$green: #2ECC40;
-$olive: #3D9970;
-$lime:  #01FF70;
-
-// Warm
-
-$yellow:  #FFDC00;
-$orange:  #FF851B;
-$red:     #FF4136;
-$fuchsia: #F012BE;
-$purple:  #B10DC9;
-$maroon:  #85144B;
-
-// Gray Scale
-
-$white:  #fff;
-$silver: #ddd;
-$gray:   #aaa;
-$black:  #111;
-
-// Typography
-
-$typecsset-base-font-size:    16px;
-$typecsset-base-line-height:  32px;
-$typecsset-show-baseline:     true;
-
-$gutter--normal: 24px;
-$gutter--narrow: 12px;
-$gutter--skinny: 6px;
 
 
 /*------------------------------------*\
@@ -84,22 +218,21 @@ $gutter--skinny: 6px;
 
 
 
-
 /*------------------------------------*\
     $GENERAL
 \*------------------------------------*/
-* {
+*{
     box-sizing: border-box;
 }
 
 body {
-    width: 90%;
-    margin: 0 auto;
-    background-color: rgba(0,0,0,0.1);
+//    width: 90%;
+//    margin: 0 auto;
+//    background-color: rgba(0,0,0,0.1);
 }
 
 blockquote {
-    box-shadow: inset 5px 0 0 black;
+//    box-shadow: inset 5px 0 0 black;
     padding-left: 20px;
     position: relative;
     margin-left: 0;
@@ -133,11 +266,11 @@ ol {
 }
 
 table {
-    box-shadow: inset 1px 1px 0 black;
+//    box-shadow: inset 1px 1px 0 black;
 }
 td,
 th {
-    box-shadow: inset -1px -1px 0 black;
+//    box-shadow: inset -1px -1px 0 black;
 }
 
 h1,
@@ -146,9 +279,74 @@ h3,
 h4,
 h5,
 h6 {
-    box-shadow: inset  1px  1px 0 black,
-                inset -1px -1px 0 black;
     padding: 0 $gutter--skinny;
 }
+
+a {
+  color: $color--blue;
+
+  &:hover,
+  &:focus {
+    color: $color--green;
+  }
+
+  &:active {
+    color: $color--red;
+  }
+}
+
+
+
+
+
+/*------------------------------------*\
+    $LAYOUT
+\*------------------------------------*/
+.l-header {
+
+}
+
+.l-banner {
+
+}
+
+.l-component-header {
+
+}
+
+.l-component {
+
+}
+
+.l-component-footer {
+
+}
+
+.l-sidebar {
+
+}
+
+.l-footer {
+
+}
+
+.l-sidebar {
+
+}
+
+/*------------------------------------*\
+    $MODULES
+\*------------------------------------*/
+@import "m-site-logo";
+@import "m-navigation";
+@import "m-site-search";
+@import "m-advertisement";
+@import "m-latest-news";
+
+
+////////////////////////////////////
+@import "dev";
+
+
 
 

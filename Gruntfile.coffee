@@ -35,13 +35,19 @@ module.exports = (grunt) ->
         src: ['**/*.html']
         dest: 'build/'
 
+      build_svg:
+        expand: true
+        cwd: 'source/assets/svg/'
+        src: ['**/*.svg']
+        dest: 'build/assets/svg/'
+
     shell:
       build:
         command: 'rm -rf .tmp'
 
     sass:
       options:
-        precision: 9
+        precision: 7
         sourcemap: true
       build:
         files: {
@@ -111,6 +117,8 @@ module.exports = (grunt) ->
       'js'
 
       'html'
+
+      'copy:build_svg'
 
       'watch'
     ]
